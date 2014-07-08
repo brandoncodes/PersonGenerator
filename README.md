@@ -1,4 +1,4 @@
 PersonGenerator
 ===============
 
-Creates random dictionaries of peoppe
+Creates random dictionaries of people
