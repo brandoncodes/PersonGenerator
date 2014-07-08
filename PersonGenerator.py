@@ -110,7 +110,8 @@ class PersonGenerator():
 		self.max_female = cur.execute(Statics.COUNT_FEMALE).fetchone()[0]
 		self.max_last = cur.execute(Statics.COUNT_LAST).fetchone()[0]
 
-		print '''\nLoaded...\n %s streets \n %s cities \n %s male names \n %s female names \n %s last names''' % (self.max_street, self.max_city, self.max_male, self.max_female, self.max_last)
+		print '''\nLoaded...\n %s streets \n %s cities \n %s male names \n %s female names \n %s last names''' % \
+			(self.max_street, self.max_city, self.max_male, self.max_female, self.max_last)
 
 	def getAddress(self):
 		cur = self.con.cursor()
@@ -177,7 +178,8 @@ def main(args):
 			print handler.getRandom()
 
 parser = argparse.ArgumentParser(description=DESCRIPTION)
-parser.add_argument('-r','--reload', action="store_true", help='Reloads the data from text files. \n Use this option if no sql file exists')
+parser.add_argument('-r','--reload', action="store_true", \
+	help='Reloads the data from text files. \n Use this option if no sql file exists')
 parser.add_argument('-s','--sample', type=int, help='Outputs provided number of person objects to std out')
 parser.set_defaults(reload=False)
 parser.set_defaults(sample=-1)
